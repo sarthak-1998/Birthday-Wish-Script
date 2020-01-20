@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="lotsOfWishes()">Click me me me please!!!!!!!!</button>
+<p id="lotsOfWishes"></p>
+<br><br>
+<button onclick="FiniteWishes()">Wait ...............That's a lot of wishes bro!</button>
+<p id="finiteWish"></p>
+<br><br>
+<button onclick="bumpMe()">Curious what's next ?????</button>
+<p id="bumps"></p>
+<br><br>
+<script>
+    
+        class Year {
+            constructor(age) {
+                this.feelings = ["bliss","contentment","delight","elation","enjoyment","euphoria","exhilaration","glee","joy","jubilation","laughter","optimism","peace of mind","pleasure","prosperity","well-being","beatitude","blessedness","cheer","cheerfulness","delectation","delirium","ecstasy","enchantment","exuberance","felicity","gaiety","geniality","gladness","hilarity","hopefulness","joviality","lightheartedness","merriment","mirth","paradise","playfulness","rejoicing","sanctity","amusing","enjoyable","entertaining","lively","pleasant","boisterous","convivial","diverting","merry","witty","affection","appreciation","devotion","emotion","fondness","friendship","infatuation","lust","passion","respect","taste","tenderness","yearning","adulation","allegiance","amity","amorousness","amour","ardor","attachment","case","cherishing","crush","delight","devotedness","enchantment","enjoyment","fervor","fidelity","flame","hankering","idolatry","inclination","involvement","like","partiality","piety","rapture","regard","relish","sentiment","weakness","worship","zeal","ardency","mad for","soft spot","appreciation","awe","consideration","deference","dignity","esteem","fear","honor","recognition","regard","reverence","tribute","account","adoration","approbation","courtesy","estimation","favor","homage","obeisance","ovation","repute","testimonial","veneration","worship"];
+                this.age = age;
+            }
+            wishHappyBirthday() {
+                var wish  = ""
+                wish += "Wish you lot of Love\n";
+                for (var years = 1; years <= (10* this.age); years++) {
+                    var randInt = Math.floor(Math.random()*this.feelings.length+1);
+                    wish += ", " + this.feelings[randInt]
+                }
+                return wish;
+            }
+            FiniteWishMe(){
+                var wish  = ""
+                wish += "Basically wishing you lot of THINGS in current and coming years....";
+                wish += "Happyyyyyyyyyyyyyy Birthdayyyyyyyyyyy To you  <NAME>"; // add name of the person
+                return wish;
+            }
+            bumps(){
+                var wish  = ""
+                wish +="And definitely " + this.age + " birthday bumps!!!!!!"
+                return wish;
+            }
+        }
+        var i=0,j=0,k=0;
+        var speed = 50;
+        var Hooman = new Year(28); // Value of age
+        var wishText = Hooman.wishHappyBirthday();
+
+
+        function lotsOfWishes() {
+            if (i < wishText.length) {
+                document.getElementById("lotsOfWishes").innerHTML += wishText.charAt(i);
+                i++;
+                setTimeout(lotsOfWishes, 10);
+            }
+        }
+        var finiteWish = Hooman.FiniteWishMe()
+        function FiniteWishes() {
+            if (j < finiteWish.length) {
+                document.getElementById("finiteWish").innerHTML += finiteWish.charAt(j);
+                j++;
+                setTimeout(FiniteWishes, 30);
+            }
+        }
+
+        var bumpWish = Hooman.bumps()
+        function bumpMe() {
+            if (k < bumpWish.length) {
+                document.getElementById("bumps").innerHTML += bumpWish.charAt(k);
+                k++;
+                setTimeout(bumpMe, 50);
+            }
+        }
+    </script>
+</body>
+</html>
